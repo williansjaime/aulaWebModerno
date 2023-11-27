@@ -12,7 +12,16 @@
         </header>
         <nav>
             <a href wm-nav="exercicios/teste.html">00 - Teste</a> |
-            <a href wm-nav="exercicios/temp.html">TEMPPPP</a>  
+            <a href wm-nav="exercicios/texto1.html">01 - Texto1</a> | 
+            <a href wm-nav="exercicios/texto2.html">02 - Texto2</a> |
+            <a href wm-nav="exercicios/listas.html">03 - Lista</a> |
+            <a href wm-nav="exercicios/listaAninhada.html">04 - Lista Aninhada</a> |
+            <a href wm-nav="exercicios/links.html">05 - Linkes</a> |
+            <a href wm-nav="exercicios/tabela.html">06 - Tabela</a> |
+            <a href wm-nav="exercicios/form/form.html">07 - Formulário</a> |
+            <a href wm-nav="exercicios/images.html">08 - Image</a> |
+            <a href wm-nav="exercicios/video.html">09 - Video</a> |
+            <a href wm-nav="exercicios/tagsnaovisuais.html">09 - Tags Não Visuais</a> |
         </nav>
         <section id="conteudo"></section>
         <footer>
@@ -27,7 +36,7 @@
                     e.preventDefault()
                     fetch(link.getAttribute('wm-nav'))
                         .then(resp => resp.text())
-                        .then(html => conteudo.innerHTML = html)
+                        .then(html => conteudo.innerHTML = html)        
                 }
             })
         </script>
