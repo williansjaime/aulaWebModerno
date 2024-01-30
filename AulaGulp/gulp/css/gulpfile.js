@@ -1,4 +1,4 @@
-const { series } = require('gulp')
+const { series,parallel } = require('gulp')
 const gulp = require('gulp')
 const sass = require('gulp-sass')(require('sass'))
 const uglifycss = require('gulp-uglifycss')
@@ -9,7 +9,12 @@ function transformacaoCSS(){
         .pipe(sass().on('erro', sass.logError))
         .pipe(uglifycss({"uglyComments": true}))
         .pipe(concat('estilo.min.css'))
-        .pipe(gulp.dest('buil/css'))
+        .pipe(gulp.dest('build/css'))
 }
 
-exports.default = series(transformacaoCSS)
+function transferirHTML(){
+    return gulp.src('src/index.html')
+        .pipe(gulp.dest('build'))
+}
+
+exports.default = parallel(transformacaoCSS,transferirHTML)//series(transformacaoCSS)
